@@ -1,9 +1,9 @@
 <!--
-  Title: Multiplatform Kickstarter Template
+  Title: MindSync
   Description: The first Open Source Template with all boilerplate code needed to quickly create Kotlin Multiplatform Applications.
-  Author: Multiplatform Kickstarter
+  Author: MindSync, Inc
   -->
- **ROADMAP**: Checkout the board with the progress done for the template [here](https://github.com/orgs/MultiplatformKickstarter/projects/6).
+ **ROADMAP**: Checkout the board with the progress done for the template [here](https://github.com/orgs/dallay/projects/1).
  <br><br>
 
 <img src="config/images/multiplatform-kickstarter-logo.png" align="left" height="128px" />
@@ -110,14 +110,6 @@ It includes more features, screens and components. Like:
 
 Checkout [multiplatformkickstarter.com](https://www.multiplatformkickstarter.com) for all details or go directly to our [store](https://www.multiplatformkickstarter.com/pricing)
 <br><br>
-
-
-Who made this
---------------
-
-| <a href="https://github.com/ferranpons"><img src="https://avatars2.githubusercontent.com/u/1225463?v=3&s=460" alt="Ferran Pons" align="left" height="100" width="100" /></a> |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Ferran Pons](https://github.com/ferranpons)                                                                                                                                 |
 
 <br><br>
 
