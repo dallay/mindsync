@@ -83,8 +83,7 @@ Comes with this stack built-in:
 
 
 ### Download
-
-Click to "Use This Template" button to create a new repository with this template.
+TODO: Add download links
 <br><br>
 
 ### Usage
@@ -92,72 +91,8 @@ Click to "Use This Template" button to create a new repository with this templat
 Go to the [Documentation page](https://docs.multiplatformkickstarter.com) for all the information. (**WIP**)
 <br><br>
 
-PRO Template
------------------
-
-Do you need more? The Basic template is a good start but the **Pro template** have all you need to create professional apps without a hassle.
-It includes more features, screens and components. Like:
-
-- Advanced CI (deployment)
-- A/B Component
-- Deeplinks
-- More Translations
-- Social Login
-- 3rd party integrations
-- **and more!**
-
-**Save months of work plus a lot of money and focus on building a profitable business.**
-
-Checkout [multiplatformkickstarter.com](https://www.multiplatformkickstarter.com) for all details or go directly to our [store](https://www.multiplatformkickstarter.com/pricing)
-<br><br>
-
-<br><br>
-
-Contribute
-----------
-
-For now, we are not open for contribution until the preview is over.
-<br><br>
-
-
 Bugs and Feedback
 -----------------
 
-For bugs, questions and discussions please use the [Github Issues](https://github.com/multiplatformkickstarter/kmp-template/issues).
+For bugs, questions and discussions please use the [Github Issues](https://github.com/dallay/mindsync/issues).
 <br><br>
-
-
-Social Media
-------------
-
-Check out our social media to be up-to-date about new products, features and releases.
-
-- [X platform](https://twitter.com/mpkickstarter)
-
-**Follow us!**
-<br><br>
-
-
-License
--------
-
-Copyright 2023 Multiplatform Kickstarter
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-<br><br>
-
-
-Credits
--------
-
-<a href="https://storyset.com/user">Illustrations by Storyset</a>
