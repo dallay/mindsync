@@ -6,43 +6,12 @@
  **ROADMAP**: Checkout the board with the progress done for the template [here](https://github.com/orgs/dallay/projects/1).
  <br><br>
 
-<img src="config/images/multiplatform-kickstarter-logo.png" align="left" height="128px" />
-<img align="left" width="0" height="128px" hspace="10" />
-
-<div style="display:block; height: 168px;">
-* <i>The Multiplatform Kickstarter Basic Template</i> *
-
-The first Open Source Template with all boilerplate code needed to quickly create Kotlin Multiplatform Applications.
-</div>
-
-<br/><br/>
-<p align="center">
-<b><a href="#about">About</a></b>
-|
-<b><a href="#download">Download</a></b>
-|
-<b><a href="#usage">Usage</a></b>
-|
-<b><a href="#pro-template">PRO Template</a></b>
-|
-<b><a href="#who-made-this">Who Made This</a></b>
-|
-<b><a href="#contribute">Contribute</a></b>
-|
-<b><a href="#bugs-and-feedback">Bugs and Feedback</a></b>
-|
-<b><a href="#socila-media">Social Media</a></b>
-|
-<b><a href="#license">License</a></b>
-</p>
-<br/>
-
 ### About
 
 <img align="right" width="0" height="368px" hspace="20"/>
 <img src="config/images/multiplatform-kickstarter-screenshot.png" height="368px" align="right" />
 
-Multiplatform Kickstarter is an opinionated template based in **Kotlin Multiplatform** (KMP) and **Compose Multiplatform**. While most templates only solves the basic functionality, we are aiming to solve most of the common problems when creating applications from initial status to production. 
+MindSync is an opinionated template based in **Kotlin Multiplatform** (KMP) and **Compose Multiplatform**. While most templates only solves the basic functionality, we are aiming to solve most of the common problems when creating applications from initial status to production. 
 
 Comes with this stack built-in:
 
@@ -83,81 +52,16 @@ Comes with this stack built-in:
 
 
 ### Download
-
-Click to "Use This Template" button to create a new repository with this template.
+TODO: Add download links
 <br><br>
 
 ### Usage
 
-Go to the [Documentation page](https://docs.multiplatformkickstarter.com) for all the information. (**WIP**)
+Go to the [Documentation page](https://github.com/dallay/mindsync) for all the information. (**WIP**)
 <br><br>
-
-PRO Template
------------------
-
-Do you need more? The Basic template is a good start but the **Pro template** have all you need to create professional apps without a hassle.
-It includes more features, screens and components. Like:
-
-- Advanced CI (deployment)
-- A/B Component
-- Deeplinks
-- More Translations
-- Social Login
-- 3rd party integrations
-- **and more!**
-
-**Save months of work plus a lot of money and focus on building a profitable business.**
-
-Checkout [multiplatformkickstarter.com](https://www.multiplatformkickstarter.com) for all details or go directly to our [store](https://www.multiplatformkickstarter.com/pricing)
-<br><br>
-
-<br><br>
-
-Contribute
-----------
-
-For now, we are not open for contribution until the preview is over.
-<br><br>
-
 
 Bugs and Feedback
 -----------------
 
-For bugs, questions and discussions please use the [Github Issues](https://github.com/multiplatformkickstarter/kmp-template/issues).
+For bugs, questions and discussions please use the [Github Issues](https://github.com/dallay/mindsync/issues).
 <br><br>
-
-
-Social Media
-------------
-
-Check out our social media to be up-to-date about new products, features and releases.
-
-- [X platform](https://twitter.com/mpkickstarter)
-
-**Follow us!**
-<br><br>
-
-
-License
--------
-
-Copyright 2023 Multiplatform Kickstarter
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-<br><br>
-
-
-Credits
--------
-
-<a href="https://storyset.com/user">Illustrations by Storyset</a>
