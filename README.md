@@ -6,37 +6,6 @@
  **ROADMAP**: Checkout the board with the progress done for the template [here](https://github.com/orgs/dallay/projects/1).
  <br><br>
 
-<img src="config/images/multiplatform-kickstarter-logo.png" align="left" height="128px" />
-<img align="left" width="0" height="128px" hspace="10" />
-
-<div style="display:block; height: 168px;">
-* <i>The MindSync Basic Template</i> *
-
-The first Open Source Template with all boilerplate code needed to quickly create Kotlin Multiplatform Applications.
-</div>
-
-<br/><br/>
-<p align="center">
-<b><a href="#about">About</a></b>
-|
-<b><a href="#download">Download</a></b>
-|
-<b><a href="#usage">Usage</a></b>
-|
-<b><a href="#pro-template">PRO Template</a></b>
-|
-<b><a href="#who-made-this">Who Made This</a></b>
-|
-<b><a href="#contribute">Contribute</a></b>
-|
-<b><a href="#bugs-and-feedback">Bugs and Feedback</a></b>
-|
-<b><a href="#socila-media">Social Media</a></b>
-|
-<b><a href="#license">License</a></b>
-</p>
-<br/>
-
 ### About
 
 <img align="right" width="0" height="368px" hspace="20"/>
@@ -88,7 +57,7 @@ TODO: Add download links
 
 ### Usage
 
-Go to the [Documentation page](https://docs.multiplatformkickstarter.com) for all the information. (**WIP**)
+Go to the [Documentation page](https://github.com/dallay/mindsync) for all the information. (**WIP**)
 <br><br>
 
 Bugs and Feedback
