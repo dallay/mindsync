@@ -5,6 +5,7 @@
   -->
  **ROADMAP**: Checkout the board with the progress done for the template [here](https://github.com/orgs/dallay/projects/1).
  <br><br>
+[![Link Checking Workflow](https://github.com/dallay/mindsync/actions/workflows/link-checking.yml/badge.svg)](https://github.com/dallay/mindsync/actions/workflows/link-checking.yml)
 
 ### About
 
