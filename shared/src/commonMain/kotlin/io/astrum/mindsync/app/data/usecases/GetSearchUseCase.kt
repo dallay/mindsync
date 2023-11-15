@@ -8,6 +8,7 @@ class GetSearchUseCase(
     private val nearMeAdsUseCase: GetNearMeAdsUseCase
 ) : UseCase() {
 
+    @Suppress("UNUSED_PARAMETER")
     suspend fun invoke(searchId: Int): Result<List<PetModel>> = runCatching {
         return@runCatching emptyList()
     }
