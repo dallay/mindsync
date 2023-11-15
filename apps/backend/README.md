@@ -1,4 +1,4 @@
-# Multiplatform Kickstarter Service Template
+# MindSync Service Template
 Basic Service template in ktor
 
 

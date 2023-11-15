@@ -3,7 +3,7 @@ package com.multiplatformkickstarter.app.localization.translations
 import com.multiplatformkickstarter.app.localization.Localization
 
 internal object DeutschLocalization : Localization {
-    override val appName = "Multiplatform Kickstarter"
+    override val appName = "MindSync"
 
     override val actionSettings = "Einstellungen"
     override val next = "Weiter"
@@ -145,11 +145,11 @@ internal object DeutschLocalization : Localization {
 
     override val debugMenuTitle = "Debug-Menü"
 
-    override val onboardingPromoTitle1 = "Multiplatform Kickstarter"
+    override val onboardingPromoTitle1 = "MindSync"
     override val onboardingPromoTitle2 = "Merkmale"
     override val onboardingPromoTitle3 = "PRO Template"
 
-    override val onboardingPromoLine1 = "Willkommen zu Multiplatform Kickstarter! Dies ist die Onboarding-Komponente, die alle Funktionen dieser Anwendung vorstellt."
+    override val onboardingPromoLine1 = "Willkommen zu MindSync! Dies ist die Onboarding-Komponente, die alle Funktionen dieser Anwendung vorstellt."
     override val onboardingPromoLine2 = "Diese Vorlage enthält alles, was Sie benötigen, um Ihre eigenen Anwendungen im Handumdrehen zu starten. Von der Navigation über die Abhängigkeitsinjektion bis zur Server-API."
     override val onboardingPromoLine3 = "Wenn Sie mehr benötigen, wie gespeicherte Suchen, Geolokalisierung, Follower, Bewertungen oder einen Marktplatz, müssen Sie nur unsere Pro-Vorlage herunterladen, die Sie unter multiplatformkickstarter.com finden."
 }

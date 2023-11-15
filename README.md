@@ -10,7 +10,7 @@
 <img align="left" width="0" height="128px" hspace="10" />
 
 <div style="display:block; height: 168px;">
-* <i>The Multiplatform Kickstarter Basic Template</i> *
+* <i>The MindSync Basic Template</i> *
 
 The first Open Source Template with all boilerplate code needed to quickly create Kotlin Multiplatform Applications.
 </div>
@@ -42,7 +42,7 @@ The first Open Source Template with all boilerplate code needed to quickly creat
 <img align="right" width="0" height="368px" hspace="20"/>
 <img src="config/images/multiplatform-kickstarter-screenshot.png" height="368px" align="right" />
 
-Multiplatform Kickstarter is an opinionated template based in **Kotlin Multiplatform** (KMP) and **Compose Multiplatform**. While most templates only solves the basic functionality, we are aiming to solve most of the common problems when creating applications from initial status to production. 
+MindSync is an opinionated template based in **Kotlin Multiplatform** (KMP) and **Compose Multiplatform**. While most templates only solves the basic functionality, we are aiming to solve most of the common problems when creating applications from initial status to production. 
 
 Comes with this stack built-in:
 

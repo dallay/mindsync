@@ -3,7 +3,7 @@ package com.multiplatformkickstarter.app.localization.translations
 import com.multiplatformkickstarter.app.localization.Localization
 
 internal object EnglishLocalization : Localization {
-    override val appName = "Multiplatform Kickstarter"
+    override val appName = "MindSync"
 
     override val actionSettings = "Settings"
     override val next = "Next"
@@ -14,10 +14,10 @@ internal object EnglishLocalization : Localization {
     override val promptPassword = "Password"
     override val actionSignIn = "Sign in or register"
     override val actionSignInShort = "Sign in"
-    override val welcome = "Welcome to Multiplatform Kickstarter!"
+    override val welcome = "Welcome to MindSync!"
     override val invalidUsername = "Not a valid username"
     override val invalidPassword = "Password must be >5 characters"
-    override val join = "Join Multiplatform Kickstarter!"
+    override val join = "Join MindSync!"
 
     override val genericFailedDefaultMessage = "Something bad happened. Please try again later."
     override val loginFailedUnauthorizedMessage = "User or Password are incorrect. Please try again."
@@ -145,7 +145,7 @@ internal object EnglishLocalization : Localization {
 
     override val debugMenuTitle = "Debug Menu"
 
-    override val onboardingPromoTitle1 = "Multiplatform Kickstarter"
+    override val onboardingPromoTitle1 = "MindSync"
     override val onboardingPromoTitle2 = "Features"
     override val onboardingPromoTitle3 = "PRO Template"
 

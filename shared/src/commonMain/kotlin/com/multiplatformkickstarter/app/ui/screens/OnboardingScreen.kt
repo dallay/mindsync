@@ -31,7 +31,7 @@ class OnboardingScreen : Screen {
             val onboardingPromoLine1 = buildAnnotatedString {
                 append("Welcome to ")
                 withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
-                    append("Multiplatform Kickstarter")
+                    append("MindSync")
                 }
                 append(localization.onboardingPromoLine1)
             }

@@ -12,7 +12,7 @@
         </map>
       </option>
       <option name="executionName" />
-      <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
+      <option name="externalProjectPath" value="$PROJECT_DIR$/apps/backend" />
       <option name="externalSystemIdString" value="GRADLE" />
       <option name="scriptParameters" value="--info" />
       <option name="taskDescriptions">
