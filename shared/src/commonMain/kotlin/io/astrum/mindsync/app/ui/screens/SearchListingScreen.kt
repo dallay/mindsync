@@ -37,7 +37,7 @@ import io.astrum.mindsync.app.localization.getCurrentLocalization
 import io.astrum.mindsync.app.localization.getLocalizedModelName
 import io.astrum.mindsync.app.ui.components.EmptyLayout
 import io.astrum.mindsync.app.ui.components.PetCardBig
-import io.astrum.mindsync.app.ui.icon.MultiplatformKickstarterIcons
+import io.astrum.mindsync.app.ui.icon.ApplicationIcons
 import io.astrum.mindsync.app.ui.screens.viewmodel.SearchListingSideEffects
 import io.astrum.mindsync.app.ui.screens.viewmodel.SearchListingViewModel
 import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
@@ -126,7 +126,7 @@ class SearchListingScreen(
                     actions = {
                         IconButton(onClick = { }) {
                             Icon(
-                                imageVector = MultiplatformKickstarterIcons.Filter,
+                                imageVector = ApplicationIcons.Filter,
                                 contentDescription = localization.backLabel
                             )
                         }

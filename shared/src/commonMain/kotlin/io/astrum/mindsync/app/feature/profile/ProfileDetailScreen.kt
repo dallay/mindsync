@@ -49,7 +49,7 @@ import io.astrum.mindsync.app.platform.shimmerLoadingAnimation
 import io.astrum.mindsync.app.ui.components.EmptyLayout
 import io.astrum.mindsync.app.ui.components.PetCardSmall
 import io.astrum.mindsync.app.ui.components.RatingBar
-import io.astrum.mindsync.app.ui.icon.MultiplatformKickstarterIcons
+import io.astrum.mindsync.app.ui.icon.ApplicationIcons
 import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
 import io.astrum.mindsync.app.ui.theme.Typography
 import io.kamel.image.KamelImage
@@ -105,7 +105,7 @@ class ProfileDetailScreen(val userId: Int) : Screen {
                             actions = {
                                 IconButton(onClick = { }) {
                                     Icon(
-                                        imageVector = MultiplatformKickstarterIcons.Follow,
+                                        imageVector = ApplicationIcons.Follow,
                                         contentDescription = "",
                                         tint = MaterialTheme.colorScheme.onSurface
                                     )
@@ -123,7 +123,7 @@ class ProfileDetailScreen(val userId: Int) : Screen {
                                     modifier = Modifier
                                         .size(64.dp)
                                         .padding(4.dp),
-                                    imageVector = MultiplatformKickstarterIcons.Person,
+                                    imageVector = ApplicationIcons.Person,
                                     contentDescription = null
                                 )
                             } else {
@@ -153,7 +153,7 @@ class ProfileDetailScreen(val userId: Int) : Screen {
                                         ) {
                                             Icon(
                                                 modifier = Modifier.size(24.dp),
-                                                imageVector = MultiplatformKickstarterIcons.Person,
+                                                imageVector = ApplicationIcons.Person,
                                                 contentDescription = "image",
                                                 tint = MaterialTheme.colorScheme.onPrimaryContainer
                                             )

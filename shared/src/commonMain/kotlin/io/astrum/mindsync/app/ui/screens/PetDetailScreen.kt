@@ -39,7 +39,7 @@ import io.astrum.mindsync.app.common.model.PetModel
 import io.astrum.mindsync.app.data.repositories.LastSearchAdsMockRepository
 import io.astrum.mindsync.app.localization.getCurrentLocalization
 import io.astrum.mindsync.app.platform.shimmerLoadingAnimation
-import io.astrum.mindsync.app.ui.icon.MultiplatformKickstarterIcons
+import io.astrum.mindsync.app.ui.icon.ApplicationIcons
 import io.astrum.mindsync.app.ui.theme.Typography
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
@@ -111,7 +111,7 @@ fun PetDetailView(petModel: PetModel, onClose: () -> Unit) {
                     ) {
                         Icon(
                             modifier = Modifier.size(64.dp),
-                            imageVector = MultiplatformKickstarterIcons.Person,
+                            imageVector = ApplicationIcons.Person,
                             contentDescription = "image",
                             tint = MaterialTheme.colorScheme.onPrimaryContainer
                         )

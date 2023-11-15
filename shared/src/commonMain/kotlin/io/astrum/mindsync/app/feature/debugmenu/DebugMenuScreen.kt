@@ -60,7 +60,7 @@ import io.astrum.mindsync.app.ui.components.ColoredSnackBarHost
 import io.astrum.mindsync.app.ui.components.Picker
 import io.astrum.mindsync.app.ui.components.PickerModel
 import io.astrum.mindsync.app.ui.components.PickerOption
-import io.astrum.mindsync.app.ui.icon.MultiplatformKickstarterIcons
+import io.astrum.mindsync.app.ui.icon.ApplicationIcons
 import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
 import io.astrum.mindsync.app.ui.theme.Typography
 
@@ -308,7 +308,7 @@ class DebugMenuScreen : Screen {
                 thumbContent = if (checked) {
                     {
                         Icon(
-                            imageVector = MultiplatformKickstarterIcons.Check,
+                            imageVector = ApplicationIcons.Check,
                             contentDescription = null,
                             modifier = Modifier.size(SwitchDefaults.IconSize)
                         )

@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import io.astrum.mindsync.app.common.model.PetModel
 import io.astrum.mindsync.app.platform.shimmerLoadingAnimation
-import io.astrum.mindsync.app.ui.icon.MultiplatformKickstarterIcons
+import io.astrum.mindsync.app.ui.icon.ApplicationIcons
 import io.astrum.mindsync.app.ui.theme.Typography
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
@@ -84,7 +84,7 @@ fun PetCardSmall(
                     ) {
                         Icon(
                             modifier = Modifier.size(36.dp),
-                            imageVector = MultiplatformKickstarterIcons.BrokenImage,
+                            imageVector = ApplicationIcons.BrokenImage,
                             contentDescription = "image",
                             tint = MaterialTheme.colorScheme.onPrimaryContainer
                         )

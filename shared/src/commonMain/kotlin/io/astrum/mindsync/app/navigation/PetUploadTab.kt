@@ -9,7 +9,7 @@ import cafe.adriel.voyager.navigator.tab.TabOptions
 import cafe.adriel.voyager.transitions.ScaleTransition
 import io.astrum.mindsync.app.feature.petupload.PetUploadScreen
 import io.astrum.mindsync.app.localization.getCurrentLocalization
-import io.astrum.mindsync.app.ui.icon.MultiplatformKickstarterIcons
+import io.astrum.mindsync.app.ui.icon.ApplicationIcons
 
 internal object PetUploadTab : Tab {
     private val localization = getCurrentLocalization()
@@ -17,7 +17,7 @@ internal object PetUploadTab : Tab {
     override val options: TabOptions
         @Composable
         get() {
-            val icon = rememberVectorPainter(MultiplatformKickstarterIcons.Create)
+            val icon = rememberVectorPainter(ApplicationIcons.Create)
 
             return remember {
                 TabOptions(

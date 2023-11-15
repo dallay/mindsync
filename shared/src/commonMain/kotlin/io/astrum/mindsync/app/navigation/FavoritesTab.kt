@@ -6,7 +6,7 @@ import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
 import io.astrum.mindsync.app.localization.getCurrentLocalization
-import io.astrum.mindsync.app.ui.icon.MultiplatformKickstarterIcons
+import io.astrum.mindsync.app.ui.icon.ApplicationIcons
 import io.astrum.mindsync.app.ui.screens.ProTemplateFeature
 
 internal object FavoritesTab : Tab {
@@ -14,7 +14,7 @@ internal object FavoritesTab : Tab {
     override val options: TabOptions
         @Composable
         get() {
-            val icon = rememberVectorPainter(MultiplatformKickstarterIcons.Favorite)
+            val icon = rememberVectorPainter(ApplicationIcons.Favorite)
 
             return remember {
                 TabOptions(

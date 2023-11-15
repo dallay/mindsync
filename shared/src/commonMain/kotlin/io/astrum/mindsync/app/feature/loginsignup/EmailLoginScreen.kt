@@ -48,7 +48,7 @@ import io.astrum.mindsync.app.localization.getCurrentLocalization
 import io.astrum.mindsync.app.ui.components.ColoredSnackBarHost
 import io.astrum.mindsync.app.ui.components.SnackbarType
 import io.astrum.mindsync.app.ui.components.showSnackbar
-import io.astrum.mindsync.app.ui.icon.MultiplatformKickstarterIcons
+import io.astrum.mindsync.app.ui.icon.ApplicationIcons
 import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
 import io.astrum.mindsync.app.ui.theme.Typography
 import kotlinx.coroutines.launch
@@ -141,7 +141,7 @@ fun EmailLoginView(viewModel: EmailLoginViewModel, snackbarHostState: SnackbarHo
 
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp),
-                leadingIcon = { Icon(imageVector = MultiplatformKickstarterIcons.Email, contentDescription = null) },
+                leadingIcon = { Icon(imageVector = ApplicationIcons.Email, contentDescription = null) },
                 label = { Text(text = localization.loginScreenEmailLabel) },
                 value = email.value,
                 onValueChange = { email.value = it },
@@ -151,7 +151,7 @@ fun EmailLoginView(viewModel: EmailLoginViewModel, snackbarHostState: SnackbarHo
             )
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp),
-                leadingIcon = { Icon(imageVector = MultiplatformKickstarterIcons.Password, contentDescription = null) },
+                leadingIcon = { Icon(imageVector = ApplicationIcons.Password, contentDescription = null) },
                 label = { Text(text = localization.loginScreenPasswordLabel) },
                 value = password.value,
                 visualTransformation = PasswordVisualTransformation(),

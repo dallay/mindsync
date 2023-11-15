@@ -68,7 +68,7 @@ import io.astrum.mindsync.app.ui.components.PickerModel
 import io.astrum.mindsync.app.ui.components.PickerOption
 import io.astrum.mindsync.app.ui.components.SnackbarType
 import io.astrum.mindsync.app.ui.components.showSnackbar
-import io.astrum.mindsync.app.ui.icon.MultiplatformKickstarterIcons
+import io.astrum.mindsync.app.ui.icon.ApplicationIcons
 import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
 import io.astrum.mindsync.app.ui.theme.Typography
 import kotlinx.coroutines.launch
@@ -188,7 +188,7 @@ class PetUploadScreen : Screen {
                                 status.value = PetStatus.ADOPTABLE
                                 viewModel.resetErrorValues()
                             }) {
-                                Icon(imageVector = MultiplatformKickstarterIcons.Delete, contentDescription = null)
+                                Icon(imageVector = ApplicationIcons.Delete, contentDescription = null)
                             }
                         }
                     )
@@ -336,7 +336,7 @@ class PetUploadScreen : Screen {
                 },
                 readOnly = true,
                 trailingIcon = {
-                    Icon(imageVector = MultiplatformKickstarterIcons.ArrowDropDown, contentDescription = null)
+                    Icon(imageVector = ApplicationIcons.ArrowDropDown, contentDescription = null)
                 },
                 interactionSource = categoryInteractionSource
             )
@@ -358,7 +358,7 @@ class PetUploadScreen : Screen {
                 },
                 readOnly = true,
                 trailingIcon = {
-                    Icon(imageVector = MultiplatformKickstarterIcons.ArrowDropDown, contentDescription = null)
+                    Icon(imageVector = ApplicationIcons.ArrowDropDown, contentDescription = null)
                 },
                 interactionSource = locationInteractionSource
             )
@@ -408,7 +408,7 @@ class PetUploadScreen : Screen {
                 },
                 readOnly = true,
                 trailingIcon = {
-                    Icon(imageVector = MultiplatformKickstarterIcons.ArrowDropDown, contentDescription = null)
+                    Icon(imageVector = ApplicationIcons.ArrowDropDown, contentDescription = null)
                 },
                 interactionSource = ageInteractionSource
             )
@@ -430,7 +430,7 @@ class PetUploadScreen : Screen {
                 },
                 readOnly = true,
                 trailingIcon = {
-                    Icon(imageVector = MultiplatformKickstarterIcons.ArrowDropDown, contentDescription = null)
+                    Icon(imageVector = ApplicationIcons.ArrowDropDown, contentDescription = null)
                 },
                 interactionSource = genderInteractionSource
             )
@@ -452,7 +452,7 @@ class PetUploadScreen : Screen {
                 },
                 readOnly = true,
                 trailingIcon = {
-                    Icon(imageVector = MultiplatformKickstarterIcons.ArrowDropDown, contentDescription = null)
+                    Icon(imageVector = ApplicationIcons.ArrowDropDown, contentDescription = null)
                 },
                 interactionSource = sizeInteractionSource
             )
@@ -474,7 +474,7 @@ class PetUploadScreen : Screen {
                 },
                 readOnly = true,
                 trailingIcon = {
-                    Icon(imageVector = MultiplatformKickstarterIcons.ArrowDropDown, contentDescription = null)
+                    Icon(imageVector = ApplicationIcons.ArrowDropDown, contentDescription = null)
                 },
                 interactionSource = statusInteractionSource
             )
@@ -548,7 +548,7 @@ class PetUploadScreen : Screen {
         ) {
             Spacer(modifier = Modifier.size(16.dp))
             Icon(
-                imageVector = MultiplatformKickstarterIcons.Camera,
+                imageVector = ApplicationIcons.Camera,
                 contentDescription = null,
                 modifier = Modifier.size(60.dp).align(Alignment.CenterHorizontally)
             )

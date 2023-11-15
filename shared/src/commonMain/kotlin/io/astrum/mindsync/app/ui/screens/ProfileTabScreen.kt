@@ -36,7 +36,7 @@ import io.astrum.mindsync.app.platform.shimmerLoadingAnimation
 import io.astrum.mindsync.app.ui.components.EmptyLayout
 import io.astrum.mindsync.app.ui.components.PickerItem
 import io.astrum.mindsync.app.ui.components.RatingBar
-import io.astrum.mindsync.app.ui.icon.MultiplatformKickstarterIcons
+import io.astrum.mindsync.app.ui.icon.ApplicationIcons
 import io.astrum.mindsync.app.ui.screens.viewmodel.ProfileState
 import io.astrum.mindsync.app.ui.screens.viewmodel.ProfileViewModel
 import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
@@ -104,7 +104,7 @@ class ProfileTabScreen : Screen {
                     modifier = Modifier
                         .size(64.dp)
                         .padding(4.dp),
-                    imageVector = MultiplatformKickstarterIcons.Person,
+                    imageVector = ApplicationIcons.Person,
                     contentDescription = null
                 )
             } else {
@@ -134,7 +134,7 @@ class ProfileTabScreen : Screen {
                         ) {
                             Icon(
                                 modifier = Modifier.size(24.dp),
-                                imageVector = MultiplatformKickstarterIcons.Person,
+                                imageVector = ApplicationIcons.Person,
                                 contentDescription = "image",
                                 tint = MaterialTheme.colorScheme.onPrimaryContainer
                             )
@@ -173,7 +173,7 @@ class ProfileTabScreen : Screen {
                 modifier = Modifier
                     .size(20.dp)
                     .align(Alignment.CenterVertically),
-                imageVector = MultiplatformKickstarterIcons.ArrowRight,
+                imageVector = ApplicationIcons.ArrowRight,
                 contentDescription = null
             )
         }
@@ -182,13 +182,13 @@ class ProfileTabScreen : Screen {
     @Composable
     fun OptionsList(localization: Localization, viewModel: ProfileViewModel) {
         Column(modifier = Modifier.fillMaxWidth()) {
-            PickerItem(localization.profileMyPets, MultiplatformKickstarterIcons.Pets) { viewModel.onMyPetsClicked() }
-            PickerItem(localization.profileAccountSettings, MultiplatformKickstarterIcons.Settings) { viewModel.onProfileAccountSettingsClicked() }
-            PickerItem(localization.profileSettings, MultiplatformKickstarterIcons.Settings) { viewModel.onProfileSettingsClicked() }
-            PickerItem(localization.profileBlog, MultiplatformKickstarterIcons.Blog) { viewModel.onBlogClicked() }
-            PickerItem(localization.profileTermsAndConditions, MultiplatformKickstarterIcons.Info) { viewModel.onTermsAndConditionsClicked() }
-            PickerItem(localization.profileHelp, MultiplatformKickstarterIcons.Help) { viewModel.onHelpClicked() }
-            PickerItem(localization.profileCloseSession, MultiplatformKickstarterIcons.Exit) { viewModel.onCloseSessionClicked() }
+            PickerItem(localization.profileMyPets, ApplicationIcons.Pets) { viewModel.onMyPetsClicked() }
+            PickerItem(localization.profileAccountSettings, ApplicationIcons.Settings) { viewModel.onProfileAccountSettingsClicked() }
+            PickerItem(localization.profileSettings, ApplicationIcons.Settings) { viewModel.onProfileSettingsClicked() }
+            PickerItem(localization.profileBlog, ApplicationIcons.Blog) { viewModel.onBlogClicked() }
+            PickerItem(localization.profileTermsAndConditions, ApplicationIcons.Info) { viewModel.onTermsAndConditionsClicked() }
+            PickerItem(localization.profileHelp, ApplicationIcons.Help) { viewModel.onHelpClicked() }
+            PickerItem(localization.profileCloseSession, ApplicationIcons.Exit) { viewModel.onCloseSessionClicked() }
         }
     }
 }
