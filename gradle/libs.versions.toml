@@ -12,7 +12,8 @@ composeMultiplatform = "1.5.10"
 compose-compiler = "1.5.4-dev-k1.9.20-50f08dfa4b4"
 exposed = "0.37.3"
 skiko = "0.7.85"
-ktlint = "11.5.1"
+klint-plugin = "11.6.0"
+klint = "1.0.1"
 detekt = "1.23.1"
 kotlinx-coroutines = "1.7.3"
 androidx-junit = "1.1.5"
@@ -25,6 +26,8 @@ owasp = "8.4.2"
 [libraries]
 # Gradle Plugins
 gradle-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+gradle-ktlint = { module = "org.jlleitschuh.gradle.ktlint:org.jlleitschuh.gradle.ktlint.gradle.plugin", version.ref = "klint-plugin" }
+gradle-ktlint-idea = { module = "org.jlleitschuh.gradle.ktlint-idea:org.jlleitschuh.gradle.ktlint-idea.gradle.plugin", version.ref = "klint-plugin" }
 # Utils
 gradle-owasp-depcheck = { module = "org.owasp:dependency-check-gradle", version.ref = "owasp" }
 # Detekt
@@ -126,8 +129,6 @@ kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
-#detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 
 #Backend
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version = "1.6.10" }
