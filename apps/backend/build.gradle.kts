@@ -6,7 +6,7 @@ plugins {
 }
 
 application {
-    mainClass.set("com.multiplatformkickstarter.ApplicationKt")
+    mainClass.set("io.astrum.mindsync.server.ApplicationKt")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")

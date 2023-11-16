@@ -3,7 +3,7 @@ package io.astrum.mindsync.app.localization
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import java.util.Locale
+import java.util.*
 
 actual fun getCurrentLanguage(): AvailableLanguages {
     return when (Locale.getDefault().language) {
