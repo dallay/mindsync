@@ -1,9 +1,10 @@
 package io.astrum.mindsync.app.feature.debugmenu
 
-import co.touchlab.kermit.BuildConfig
+import com.russhwolf.settings.BuildConfig.DEBUG
+
 
 class AndroidDebug : Debug {
-    override val isDebug: Boolean = BuildConfig.DEBUG
+    override val isDebug: Boolean = DEBUG
 }
 
 actual fun getDebug(): Debug = AndroidDebug()

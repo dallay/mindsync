@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.multiplatformkickstarter.app.android"
-    compileSdk = properties["multiplatformkickstarter.android.compileSdk"].toString().toInt()
+    namespace = "io.astrum.mindsync.app.android"
+    compileSdk = properties["mindsync.android.compileSdk"].toString().toInt()
     defaultConfig {
-        applicationId = "com.multiplatformkickstarter.app.android"
-        minSdk = properties["multiplatformkickstarter.android.minSdk"].toString().toInt()
-        targetSdk = properties["multiplatformkickstarter.android.targetSdk"].toString().toInt()
+        applicationId = "io.astrum.mindsync.app.android"
+        minSdk = properties["mindsync.android.minSdk"].toString().toInt()
+        targetSdk = properties["mindsync.android.targetSdk"].toString().toInt()
         versionName = "1.0"
     }
     buildFeatures {
@@ -21,6 +21,7 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/versions/9/previous-compilation-data.bin"
         }
     }
     buildTypes {

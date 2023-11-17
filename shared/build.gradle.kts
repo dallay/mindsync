@@ -102,10 +102,10 @@ kotlin {
 }
 
 android {
-    namespace = "com.multiplatformkickstarter.app"
-    compileSdk = properties["multiplatformkickstarter.android.compileSdk"].toString().toInt()
+    namespace = "io.astrum.mindsync.app"
+    compileSdk = properties["mindsync.android.compileSdk"].toString().toInt()
     defaultConfig {
-        minSdk = properties["multiplatformkickstarter.android.minSdk"].toString().toInt()
+        minSdk = properties["mindsync.android.minSdk"].toString().toInt()
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
