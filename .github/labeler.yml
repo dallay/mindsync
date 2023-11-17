@@ -25,7 +25,7 @@ backend:
     -   any: [ 'src/**/*.java', 'src/**/*.kt' ]
 
 # Add 'docs' label to any change to *.md files within the source dir
-docs:
+documentation:
     -   any: [ 'src/**/*.md' ]
     -   'documentation/**'
 # Add 'config' label to any change to *.yml or *.properties files within the source dir
