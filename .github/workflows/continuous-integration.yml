@@ -59,7 +59,8 @@ jobs:
             -   name: ⚙️ Common Steps for all jobs
                 uses: ./.github/actions/common-steps
             -   name: 🛠️Assemble Application
-                run: ./gradlew assembleDebug --no-daemon --scan --stacktrace
+#                run: ./gradlew assembleDebug --no-daemon --scan --stacktrace
+                run: ./gradlew build
             -   name: 🟢⬆️ Upload compose reports artifact
                 uses: actions/upload-artifact@v3.1.3
                 if: always()
