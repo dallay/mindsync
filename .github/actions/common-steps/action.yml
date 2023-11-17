@@ -5,6 +5,17 @@ description: Common steps for KMP Template workflows
 runs:
   using: composite
   steps:
+    -   name: 🔍 BOT_TOKEN
+        if: env.BOT_TOKEN == ''
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: echo "BOT_TOKEN=${GITHUB_TOKEN}" >> $GITHUB_ENV
+    -   name: 🔄 Checkout
+        uses: actions/checkout@v4
+        with:
+            fetch-depth: 0
+            token: ${{ env.BOT_TOKEN }}
     - name: ⚙️ Setup Java ☕
       uses: actions/setup-java@v3.13.0
       with:
