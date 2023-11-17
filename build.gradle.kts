@@ -7,4 +7,15 @@ plugins {
     alias(libs.plugins.compose.multiplatform).apply(false)
     id("detekt-convention")
     id("security-owasp-convention")
+    id("documentation-consumer-convention")
+}
+
+/* this task generates all tasks for sub-projects itself, therefor it just needs
+ to be applied on the root project, conventions are not working :-( */
+tasks.dokkaHtmlMultiModule.configure {
+    outputDirectory.set(layout.buildDirectory.dir("dokka"))
+}
+
+dependencies {
+    asciidoc(project(":documentation"))
 }
