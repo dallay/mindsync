@@ -1,4 +1,4 @@
-name: CI/CD Build
+name: ⚙️ CI/CD Build
 
 on:
     pull_request:
@@ -30,6 +30,8 @@ jobs:
                 uses: actions/checkout@v4
                 with:
                     fetch-depth: 0
+            -   name: ⚙️ Common Steps for all jobs
+                uses: ./.github/actions/common-steps
             -   name: 🧹 Clean Gradle cache
                 run: |
                     ./gradlew clean
