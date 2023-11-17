@@ -22,6 +22,18 @@ permissions:
     pull-requests: write
 
 jobs:
+    start-steps:
+        name: 🚀 Start Steps (Checkout, Cache, etc)
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v4
+                with:
+                    fetch-depth: 0
+            -   name: 🧹 Clean Gradle cache
+                run: |
+                    ./gradlew clean
+                    rm -rf $HOME/.gradle/caches/
     validation:
         name: 👀 Validation
         runs-on: ubuntu-latest
@@ -34,6 +46,7 @@ jobs:
                 uses: gradle/wrapper-validation-action@v1.1.0
     compile:
         name: 🛠️ Assembling
+        needs: start-steps
         runs-on: ubuntu-latest
         if: github.event_name == 'pull_request'
         steps:
@@ -81,7 +94,7 @@ jobs:
                         rocket
     tests:
         name: 🧪 Tests
-        needs: compile
+        needs: [compile, start-steps]
         runs-on: ubuntu-latest
 
         steps:
@@ -153,7 +166,7 @@ jobs:
     static-analysis-security:
         name: 🔮 Static analysis and 🔒Security Checks
         runs-on: ubuntu-latest
-
+        needs: start-steps
         steps:
             -   name: 🔄 Checkout
                 uses: actions/checkout@v4
@@ -187,7 +200,7 @@ jobs:
                     checkout_path: ${{ github.workspace }}
     release:
         name: 🚀 Release
-        needs: [ tests, static-analysis-security ]
+        needs: [ tests, static-analysis-security, start-steps ]
         if: github.ref == 'refs/heads/main'
         runs-on: ubuntu-latest
 
@@ -219,7 +232,7 @@ jobs:
 
     build-publish-docker:
         name: 🚢 🐳 Build and Publish Docker Image
-        needs: release
+        needs: [release, start-steps]
         runs-on: ubuntu-latest
 
         steps:
@@ -253,7 +266,7 @@ jobs:
 
     publish-docs:
         name: 🔵 📄 Publish Docs
-        needs: release
+        needs: [release, start-steps]
         runs-on: ubuntu-latest
 
         steps:
