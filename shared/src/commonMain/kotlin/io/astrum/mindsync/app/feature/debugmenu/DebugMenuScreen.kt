@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
-
 package io.astrum.mindsync.app.feature.debugmenu
 
 import androidx.compose.foundation.background
@@ -94,6 +92,7 @@ class DebugMenuScreen : Screen {
         }
     }
 
+    @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun DebugMenuView(viewModel: DebugMenuViewModel, snackbarHostState: SnackbarHostState, onClose: () -> Unit) {
         val localization = getCurrentLocalization()

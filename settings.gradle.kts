@@ -95,7 +95,7 @@ val projects = listOf("apps")
 projects.forEach { includeGradleProjectsRecursively(it) }
 
 includeProject(file( "shared"))
-//includeProject(file("documentation"))
+includeProject(file("documentation"))
 
 if (!System.getenv("CI").isNullOrEmpty() && !System.getenv("BUILD_SCAN_TOS_ACCEPTED")
         .isNullOrEmpty()

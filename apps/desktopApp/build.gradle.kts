@@ -69,8 +69,27 @@ compose.desktop {
         mainClass = "MainKt"
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "desktopApp"
+            packageName = "io.astrum.mindsync.app"
             packageVersion = "1.0.0"
+            copyright = "Copyright (c) 2021"
+            vendor = "Astrum"
+
+            val iconsRoot = project.file("src/desktopMain/resources/drawable")
+
+            macOS{
+                bundleID = "io.astrum.kmptemplate"
+                iconFile.set(iconsRoot.resolve("desktop-app.icns"))
+            }
+
+            windows {
+                iconFile.set(iconsRoot.resolve("desktop-app.ico"))
+                // https://www.guidgen.com/
+                upgradeUuid = "1e5dc996-79e8-4d3a-8e0e-04019db777bd"
+            }
+
+            linux {
+                iconFile.set(iconsRoot.resolve("desktop-app.png"))
+            }
         }
     }
 }

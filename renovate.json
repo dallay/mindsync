@@ -1,7 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "assignees": ["yacosta738"],
-    "baseBranches": ["develop"],
+    "baseBranches": ["main"],
     "extends": ["config:base", ":disableDependencyDashboard"],
     "rebaseWhen": "behind-base-branch",
     "reviewers": ["yacosta738"],

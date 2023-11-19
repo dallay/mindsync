@@ -10,7 +10,7 @@ fun main() = application {
     startKoin {
         modules(commonModule)
     }
-    Window(onCloseRequest = ::exitApplication) {
+    Window(title = "MindSync", onCloseRequest = ::exitApplication) {
         MultiplatformKickstarterTheme {
             MainApp()
         }

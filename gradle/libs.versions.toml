@@ -22,14 +22,19 @@ accompanistSystemuicontroller = "0.32.0"
 activityCompose = "1.8.0"
 firebase = "32.5.0"
 owasp = "8.4.2"
+asciidoctor = "4.0.0-alpha.1"
+dokka = "1.9.10"
+
 
 [libraries]
 # Gradle Plugins
 gradle-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 gradle-ktlint = { module = "org.jlleitschuh.gradle.ktlint:org.jlleitschuh.gradle.ktlint.gradle.plugin", version.ref = "klint-plugin" }
 gradle-ktlint-idea = { module = "org.jlleitschuh.gradle.ktlint-idea:org.jlleitschuh.gradle.ktlint-idea.gradle.plugin", version.ref = "klint-plugin" }
+gradle-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
 # Utils
 gradle-owasp-depcheck = { module = "org.owasp:dependency-check-gradle", version.ref = "owasp" }
+gradle-asciidoctor = { module = "org.asciidoctor:asciidoctor-gradle-jvm", version.ref = "asciidoctor" }
 # Detekt
 gradle-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 detekt-compose = { module = "io.nlopez.compose.rules:detekt", version = "0.3.0" }
