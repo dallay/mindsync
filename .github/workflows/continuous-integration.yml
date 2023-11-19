@@ -49,7 +49,7 @@ jobs:
     compile:
         name: 🛠️ Assembling
         needs: start-steps
-        runs-on: macos-latest
+        runs-on: ubuntu-latest
         if: github.event_name == 'pull_request'
         steps:
             -   name: Checkout
