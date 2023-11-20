@@ -1,10 +1,22 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "assignees": ["yacosta738"],
-    "baseBranches": ["main"],
-    "extends": ["config:base", ":disableDependencyDashboard"],
+    "assignees": [
+        "yacosta738"
+    ],
+    "extends": [
+        "config:base",
+        "group:all",
+        ":dependencyDashboard",
+        "schedule:daily"
+    ],
+    "baseBranches": [
+        "main"
+    ],
+    "commitMessageExtra": "{{{currentValue}}} to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
     "rebaseWhen": "behind-base-branch",
-    "reviewers": ["yacosta738"],
+    "reviewers": [
+        "yacosta738"
+    ],
     "packageRules": [
         {
             "groupName": "Kotlin, KSP and Compose",
@@ -34,7 +46,12 @@
         },
         {
             "automerge": true,
-            "matchUpdateTypes": ["minor", "patch", "pin", "digest"]
+            "matchUpdateTypes": [
+                "minor",
+                "patch",
+                "pin",
+                "digest"
+            ]
         }
     ]
 }
