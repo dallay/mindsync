@@ -12,6 +12,11 @@ android {
         targetSdk = properties["mindsync.android.targetSdk"].toString().toInt()
         versionName = "1.0"
     }
+    sourceSets {
+        getByName("main") {
+            java.srcDirs("src/main/kotlin")
+        }
+    }
     buildFeatures {
         compose = true
     }

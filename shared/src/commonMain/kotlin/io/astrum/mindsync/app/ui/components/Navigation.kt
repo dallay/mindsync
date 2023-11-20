@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
  * only be shown when this item is selected.
  */
 @Composable
-fun RowScope.MultiplatformKickstarterNavigationBarItem(
+fun RowScope.ApplicationNavigationBarItem(
     selected: Boolean,
     onClick: () -> Unit,
     icon: @Composable () -> Unit,
@@ -49,11 +49,11 @@ fun RowScope.MultiplatformKickstarterNavigationBarItem(
         label = label,
         alwaysShowLabel = alwaysShowLabel,
         colors = NavigationBarItemDefaults.colors(
-            selectedIconColor = MultiplatformKickstarterNavigationDefaults.navigationSelectedItemColor(),
-            unselectedIconColor = MultiplatformKickstarterNavigationDefaults.navigationContentColor(),
-            selectedTextColor = MultiplatformKickstarterNavigationDefaults.navigationSelectedItemColor(),
-            unselectedTextColor = MultiplatformKickstarterNavigationDefaults.navigationContentColor(),
-            indicatorColor = MultiplatformKickstarterNavigationDefaults.navigationIndicatorColor()
+            selectedIconColor = ApplicationNavigationDefaults.navigationSelectedItemColor(),
+            unselectedIconColor = ApplicationNavigationDefaults.navigationContentColor(),
+            selectedTextColor = ApplicationNavigationDefaults.navigationSelectedItemColor(),
+            unselectedTextColor = ApplicationNavigationDefaults.navigationContentColor(),
+            indicatorColor = ApplicationNavigationDefaults.navigationIndicatorColor()
         )
     )
 }
@@ -66,13 +66,13 @@ fun RowScope.MultiplatformKickstarterNavigationBarItem(
  * [NavigationBarItem]s.
  */
 @Composable
-fun MultiplatformKickstarterNavigationBar(
+fun ApplicationNavigationBar(
     modifier: Modifier = Modifier,
     content: @Composable RowScope.() -> Unit
 ) {
     NavigationBar(
         modifier = modifier,
-        contentColor = MultiplatformKickstarterNavigationDefaults.navigationContentColor(),
+        contentColor = ApplicationNavigationDefaults.navigationContentColor(),
         tonalElevation = 0.dp,
         content = content
     )
@@ -94,7 +94,7 @@ fun MultiplatformKickstarterNavigationBar(
  * only be shown when this item is selected.
  */
 @Composable
-fun MultiplatformKickstarterNavigationRailItem(
+fun MindsyncNavigationRailItem(
     selected: Boolean,
     onClick: () -> Unit,
     icon: @Composable () -> Unit,
@@ -113,11 +113,11 @@ fun MultiplatformKickstarterNavigationRailItem(
         label = label,
         alwaysShowLabel = alwaysShowLabel,
         colors = NavigationRailItemDefaults.colors(
-            selectedIconColor = MultiplatformKickstarterNavigationDefaults.navigationSelectedItemColor(),
-            unselectedIconColor = MultiplatformKickstarterNavigationDefaults.navigationContentColor(),
-            selectedTextColor = MultiplatformKickstarterNavigationDefaults.navigationSelectedItemColor(),
-            unselectedTextColor = MultiplatformKickstarterNavigationDefaults.navigationContentColor(),
-            indicatorColor = MultiplatformKickstarterNavigationDefaults.navigationIndicatorColor()
+            selectedIconColor = ApplicationNavigationDefaults.navigationSelectedItemColor(),
+            unselectedIconColor = ApplicationNavigationDefaults.navigationContentColor(),
+            selectedTextColor = ApplicationNavigationDefaults.navigationSelectedItemColor(),
+            unselectedTextColor = ApplicationNavigationDefaults.navigationContentColor(),
+            indicatorColor = ApplicationNavigationDefaults.navigationIndicatorColor()
         )
     )
 }
@@ -131,7 +131,7 @@ fun MultiplatformKickstarterNavigationRailItem(
  * [NavigationRailItem]s.
  */
 @Composable
-fun MultiplatformKickstarterNavigationRail(
+fun MindsyncNavigationRail(
     modifier: Modifier = Modifier,
     header: @Composable (ColumnScope.() -> Unit)? = null,
     content: @Composable ColumnScope.() -> Unit
@@ -139,7 +139,7 @@ fun MultiplatformKickstarterNavigationRail(
     NavigationRail(
         modifier = modifier,
         containerColor = Color.Transparent,
-        contentColor = MultiplatformKickstarterNavigationDefaults.navigationContentColor(),
+        contentColor = ApplicationNavigationDefaults.navigationContentColor(),
         header = header,
         content = content
     )
@@ -148,7 +148,7 @@ fun MultiplatformKickstarterNavigationRail(
 /**
  * Now in Android navigation default values.
  */
-object MultiplatformKickstarterNavigationDefaults {
+object ApplicationNavigationDefaults {
     @Composable
     fun navigationContentColor() = MaterialTheme.colorScheme.onSurfaceVariant
 

@@ -12,7 +12,7 @@ import io.astrum.mindsync.app.common.model.PetStatus
 import io.astrum.mindsync.app.data.repositories.UnauthorizedException
 import io.astrum.mindsync.app.feature.petupload.usecases.PetUploadUseCase
 import io.astrum.mindsync.app.localization.Localization
-import io.astrum.mindsync.app.platform.MultiplatformKickstarterEventTracker
+import io.astrum.mindsync.app.platform.MindsyncEventTracker
 import io.astrum.mindsync.app.platform.RootNavigatorRepository
 import io.astrum.mindsync.app.platform.TrackEvents
 import kotlinx.coroutines.channels.Channel
@@ -29,7 +29,7 @@ class PetUploadViewModel(
     private val localization: Localization,
     private val rootNavigatorRepository: RootNavigatorRepository,
     private val petUploadUseCase: PetUploadUseCase,
-    private val eventTracker: MultiplatformKickstarterEventTracker
+    private val eventTracker: MindsyncEventTracker
 ) : ScreenModel {
     private val _state = MutableStateFlow(
         PetUploadState(

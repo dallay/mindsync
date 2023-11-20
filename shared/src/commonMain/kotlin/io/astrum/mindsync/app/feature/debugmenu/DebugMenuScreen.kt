@@ -59,7 +59,7 @@ import io.astrum.mindsync.app.ui.components.Picker
 import io.astrum.mindsync.app.ui.components.PickerModel
 import io.astrum.mindsync.app.ui.components.PickerOption
 import io.astrum.mindsync.app.ui.icon.ApplicationIcons
-import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
+import io.astrum.mindsync.app.ui.theme.ApplicationTheme
 import io.astrum.mindsync.app.ui.theme.Typography
 
 class DebugMenuScreen : Screen {
@@ -67,7 +67,7 @@ class DebugMenuScreen : Screen {
 
     @Composable
     override fun Content() {
-        MultiplatformKickstarterTheme {
+        ApplicationTheme {
             val currentNavigator = LocalNavigator.currentOrThrow
             val snackbarHostState = remember { SnackbarHostState() }
             showingModal = remember { mutableStateOf(false) }
@@ -115,7 +115,7 @@ class DebugMenuScreen : Screen {
             )
         }
 
-        MultiplatformKickstarterTheme {
+        ApplicationTheme {
             Scaffold(
                 snackbarHost = {
                     SnackbarHost(

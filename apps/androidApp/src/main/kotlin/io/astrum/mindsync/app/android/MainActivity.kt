@@ -11,7 +11,7 @@ import androidx.compose.runtime.mutableStateOf
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import io.astrum.mindsync.app.MainApp
 import io.astrum.mindsync.app.common.model.theme.DarkThemeConfig
-import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
+import io.astrum.mindsync.app.ui.theme.ApplicationTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
                 onDispose {}
             }
 
-            MultiplatformKickstarterTheme(darkTheme = darkTheme) {
+            ApplicationTheme(darkTheme = darkTheme) {
                 MainApp()
             }
         }

@@ -92,10 +92,10 @@ val LightDefaultGradientColors = GradientColors(
  * @param darkTheme Whether the theme should use a dark color scheme (follows system by default).
  */
 @Composable
-fun MultiplatformKickstarterTheme(
+fun ApplicationTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
-) = MultiplatformKickstarterTheme(
+) = ApplicationTheme(
     darkTheme = darkTheme,
     disableDynamicTheming = false,
     content = content
@@ -112,7 +112,7 @@ fun MultiplatformKickstarterTheme(
  *        supported. This parameter has no effect if [androidTheme] is `true`.
  */
 @Composable
-internal fun MultiplatformKickstarterTheme(
+internal fun ApplicationTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     disableDynamicTheming: Boolean,
     content: @Composable () -> Unit

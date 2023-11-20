@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MultiplatformKickstarter"
+        android:theme="@style/Theme.MindSync"
         tools:targetApi="31"
         android:usesCleartextTraffic="true"> <!-- This line must be removed when going to production environment -->
 
@@ -37,7 +37,7 @@
         <activity
             android:name="io.astrum.mindsync.app.android.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.MultiplatformKickstarter"
+            android:theme="@style/Theme.MindSync"
             />
 
         <meta-data

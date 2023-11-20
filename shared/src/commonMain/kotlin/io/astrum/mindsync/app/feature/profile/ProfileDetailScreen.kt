@@ -50,7 +50,7 @@ import io.astrum.mindsync.app.ui.components.EmptyLayout
 import io.astrum.mindsync.app.ui.components.PetCardSmall
 import io.astrum.mindsync.app.ui.components.RatingBar
 import io.astrum.mindsync.app.ui.icon.ApplicationIcons
-import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
+import io.astrum.mindsync.app.ui.theme.ApplicationTheme
 import io.astrum.mindsync.app.ui.theme.Typography
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
@@ -61,7 +61,7 @@ class ProfileDetailScreen(val userId: Int) : Screen {
 
     @Composable
     override fun Content() {
-        MultiplatformKickstarterTheme {
+        ApplicationTheme {
             val currentNavigator = LocalNavigator.currentOrThrow
             val viewModel = getScreenModel<ProfileDetailViewModel>(
                 parameters = { ParametersHolder(listOf(userId, currentNavigator).toMutableList(), false) }

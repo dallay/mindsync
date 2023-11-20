@@ -49,7 +49,7 @@ import io.astrum.mindsync.app.ui.components.ColoredSnackBarHost
 import io.astrum.mindsync.app.ui.components.SnackbarType
 import io.astrum.mindsync.app.ui.components.showSnackbar
 import io.astrum.mindsync.app.ui.icon.ApplicationIcons
-import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
+import io.astrum.mindsync.app.ui.theme.ApplicationTheme
 import io.astrum.mindsync.app.ui.theme.Typography
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.ExperimentalResourceApi
@@ -57,7 +57,7 @@ import org.jetbrains.compose.resources.ExperimentalResourceApi
 class EmailSignUpScreen : Screen {
     @Composable
     override fun Content() {
-        MultiplatformKickstarterTheme {
+        ApplicationTheme {
             val localization = getCurrentLocalization()
             val snackbarHostState = remember { SnackbarHostState() }
             val viewModel = getScreenModel<EmailSignUpViewModel>()

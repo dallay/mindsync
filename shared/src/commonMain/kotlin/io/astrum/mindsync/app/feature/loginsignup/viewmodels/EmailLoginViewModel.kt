@@ -8,7 +8,7 @@ import io.astrum.mindsync.app.data.usecases.LoadProfileUseCase
 import io.astrum.mindsync.app.feature.loginsignup.usecases.EmailLogInUseCase
 import io.astrum.mindsync.app.localization.Localization
 import io.astrum.mindsync.app.navigation.HomeTab
-import io.astrum.mindsync.app.platform.MultiplatformKickstarterEventTracker
+import io.astrum.mindsync.app.platform.MindsyncEventTracker
 import io.astrum.mindsync.app.platform.RootNavigatorRepository
 import io.astrum.mindsync.app.platform.TrackEvents
 import io.astrum.mindsync.app.platform.isValidEmail
@@ -24,7 +24,7 @@ class EmailLoginViewModel(
     private val loadProfileUseCase: LoadProfileUseCase,
     private val localization: Localization,
     private val rootNavigatorRepository: RootNavigatorRepository,
-    private val eventTracker: MultiplatformKickstarterEventTracker
+    private val eventTracker: MindsyncEventTracker
 ) : ScreenModel {
     private val _state = MutableStateFlow(
         EmailLoginState(
