@@ -137,7 +137,7 @@ compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "composeMu
 
 #Backend
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version = "1.6.10" }
-shadow = { id = "com.github.johnrengelman.shadow", version = "7.0.0" }
+shadow = { id = "com.github.johnrengelman.shadow", version = "7.1.2" }
 
 [bundles]
 
