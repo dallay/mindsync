@@ -69,7 +69,7 @@ import io.astrum.mindsync.app.ui.components.PickerOption
 import io.astrum.mindsync.app.ui.components.SnackbarType
 import io.astrum.mindsync.app.ui.components.showSnackbar
 import io.astrum.mindsync.app.ui.icon.ApplicationIcons
-import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
+import io.astrum.mindsync.app.ui.theme.ApplicationTheme
 import io.astrum.mindsync.app.ui.theme.Typography
 import kotlinx.coroutines.launch
 import org.koin.mp.KoinPlatform
@@ -81,7 +81,7 @@ class PetUploadScreen : Screen {
 
     @Composable
     override fun Content() {
-        MultiplatformKickstarterTheme {
+        ApplicationTheme {
             val currentNavigator = LocalNavigator.currentOrThrow
             val localization = getCurrentLocalization()
             val snackbarHostState = remember { SnackbarHostState() }
@@ -149,7 +149,7 @@ class PetUploadScreen : Screen {
 
         val pickerModel = remember { mutableStateOf(PickerModel("", null, emptyList())) }
 
-        MultiplatformKickstarterTheme {
+        ApplicationTheme {
             Scaffold(
                 snackbarHost = {
                     SnackbarHost(

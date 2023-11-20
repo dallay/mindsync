@@ -39,7 +39,7 @@ import io.astrum.mindsync.app.ui.components.RatingBar
 import io.astrum.mindsync.app.ui.icon.ApplicationIcons
 import io.astrum.mindsync.app.ui.screens.viewmodel.ProfileState
 import io.astrum.mindsync.app.ui.screens.viewmodel.ProfileViewModel
-import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
+import io.astrum.mindsync.app.ui.theme.ApplicationTheme
 import io.astrum.mindsync.app.ui.theme.Typography
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
@@ -80,7 +80,7 @@ class ProfileTabScreen : Screen {
     @Composable
     fun ProfileScreenView(viewModel: ProfileViewModel, state: ProfileState, localization: Localization) {
         val scrollState = rememberScrollState()
-        MultiplatformKickstarterTheme {
+        ApplicationTheme {
             Column(modifier = Modifier.padding(bottom = 80.dp).verticalScroll(scrollState)) {
                 UserProfileData(state, viewModel)
                 OptionsList(localization, viewModel)

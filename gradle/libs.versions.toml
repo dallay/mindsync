@@ -1,7 +1,7 @@
 [versions]
 kotlin = "1.9.20"
 ktor-client = "2.3.6"
-ktor-server = "2.3.5"
+ktor-server = "2.3.6"
 multiplatform-settings = "1.1.0"
 voyager = "1.0.0-rc08"
 koin = "3.5.0"

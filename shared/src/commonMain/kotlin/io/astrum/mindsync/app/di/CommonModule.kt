@@ -20,7 +20,7 @@ import io.astrum.mindsync.app.feature.profile.viewmodels.ProfileDetailViewModel
 import io.astrum.mindsync.app.feature.search.repositories.LastSearchesRepository
 import io.astrum.mindsync.app.feature.search.repositories.PetsFromSearchRepository
 import io.astrum.mindsync.app.localization.getCurrentLocalization
-import io.astrum.mindsync.app.platform.MultiplatformKickstarterEventTracker
+import io.astrum.mindsync.app.platform.MindsyncEventTracker
 import io.astrum.mindsync.app.platform.RootNavigatorRepository
 import io.astrum.mindsync.app.platform.RootSnackbarHostStateRepository
 import io.astrum.mindsync.app.platform.ServiceClient
@@ -64,7 +64,7 @@ val commonModule = module {
     }
 
     single {
-        MultiplatformKickstarterEventTracker()
+        MindsyncEventTracker()
     }
 
     factoryOf(::GlobalAppSettingsRepository)

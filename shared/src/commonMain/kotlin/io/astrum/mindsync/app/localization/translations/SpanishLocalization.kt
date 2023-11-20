@@ -151,5 +151,5 @@ internal object SpanishLocalization : Localization {
 
     override val onboardingPromoLine1 = "Bienvenido a MindSync! Este es el componente de Onboarding que mostrará todas las funciones que encontrará en esta aplicación."
     override val onboardingPromoLine2 = "Esta plantilla tiene todo lo necesario para iniciar sus propias aplicaciones en poco tiempo. De la navegación a la inyección de dependencias y a la API del servidor."
-    override val onboardingPromoLine3 = "Si necesita más, como búsquedas guardadas, geolocalización, seguidores, calificación o un mercado, solo necesita descargar nuestra plantilla Pro que encontrará en multiplatformkickstarter.com"
+    override val onboardingPromoLine3 = "Si necesita más, como búsquedas guardadas, geolocalización, seguidores, calificación o un mercado, solo necesita descargar nuestra plantilla Pro que encontrará en mindsync.com"
 }

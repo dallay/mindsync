@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MultiplatformKickstarterTopAppBar(
+fun MindsyncTopAppBar(
     title: String,
     navigationIcon: ImageVector,
     navigationIconContentDescription: String?,

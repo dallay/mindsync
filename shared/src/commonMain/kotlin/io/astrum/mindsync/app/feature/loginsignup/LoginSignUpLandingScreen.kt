@@ -35,7 +35,7 @@ import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import io.astrum.mindsync.app.localization.getCurrentLocalization
 import io.astrum.mindsync.app.platform.Resources
-import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
+import io.astrum.mindsync.app.ui.theme.ApplicationTheme
 import io.astrum.mindsync.app.ui.theme.Typography
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
@@ -43,7 +43,7 @@ import org.jetbrains.compose.resources.painterResource
 class LoginSignUpLandingScreen : Screen {
     @Composable
     override fun Content() {
-        MultiplatformKickstarterTheme {
+        ApplicationTheme {
             LoginSignUpView()
         }
     }

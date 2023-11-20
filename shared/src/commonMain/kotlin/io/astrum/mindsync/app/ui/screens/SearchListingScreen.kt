@@ -40,7 +40,7 @@ import io.astrum.mindsync.app.ui.components.PetCardBig
 import io.astrum.mindsync.app.ui.icon.ApplicationIcons
 import io.astrum.mindsync.app.ui.screens.viewmodel.SearchListingSideEffects
 import io.astrum.mindsync.app.ui.screens.viewmodel.SearchListingViewModel
-import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
+import io.astrum.mindsync.app.ui.theme.ApplicationTheme
 import io.astrum.mindsync.app.ui.theme.Typography
 import kotlinx.coroutines.launch
 import org.koin.core.parameter.ParametersHolder
@@ -67,7 +67,7 @@ class SearchListingScreen(
         )
 
         SetupSideEffects(viewModel, snackbarHostState, localization)
-        MultiplatformKickstarterTheme {
+        ApplicationTheme {
             SearchListingView(viewModel) {
                 navigator.pop()
             }

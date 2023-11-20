@@ -41,7 +41,7 @@ val LocalBackgroundTheme = staticCompositionLocalOf { BackgroundTheme() }
  * @param content The background content.
  */
 @Composable
-fun MultiplatformKickstarterBackground(
+fun MindsyncBackground(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit
 ) {
@@ -68,7 +68,7 @@ fun MultiplatformKickstarterBackground(
  * @param content The background content.
  */
 @Composable
-fun MultiplatformKickstarterGradientBackground(
+fun MindsyncGradientBackground(
     modifier: Modifier = Modifier,
     topColor: Color = LocalGradientColors.current.primary,
     bottomColor: Color = LocalGradientColors.current.secondary,
@@ -76,7 +76,7 @@ fun MultiplatformKickstarterGradientBackground(
 ) {
     val currentTopColor by rememberUpdatedState(topColor)
     val currentBottomColor by rememberUpdatedState(bottomColor)
-    MultiplatformKickstarterBackground(modifier) {
+    MindsyncBackground(modifier) {
         Box(
             Modifier
                 .fillMaxSize()
@@ -140,31 +140,31 @@ annotation class ThemePreviews
 @ThemePreviews
 @Composable
 fun BackgroundDefault() {
-    MultiplatformKickstarterTheme(disableDynamicTheming = true) {
-        MultiplatformKickstarterBackground(Modifier.size(100.dp), content = {})
+    ApplicationTheme(disableDynamicTheming = true) {
+        MindsyncBackground(Modifier.size(100.dp), content = {})
     }
 }
 
 @ThemePreviews
 @Composable
 fun BackgroundDynamic() {
-    MultiplatformKickstarterTheme {
-        MultiplatformKickstarterBackground(Modifier.size(100.dp), content = {})
+    ApplicationTheme {
+        MindsyncBackground(Modifier.size(100.dp), content = {})
     }
 }
 
 @ThemePreviews
 @Composable
 fun GradientBackgroundDefault() {
-    MultiplatformKickstarterTheme(disableDynamicTheming = true) {
-        MultiplatformKickstarterGradientBackground(Modifier.size(100.dp), content = {})
+    ApplicationTheme(disableDynamicTheming = true) {
+        MindsyncGradientBackground(Modifier.size(100.dp), content = {})
     }
 }
 
 @ThemePreviews
 @Composable
 fun GradientBackgroundDynamic() {
-    MultiplatformKickstarterTheme {
-        MultiplatformKickstarterGradientBackground(Modifier.size(100.dp), content = {})
+    ApplicationTheme {
+        MindsyncGradientBackground(Modifier.size(100.dp), content = {})
     }
 }

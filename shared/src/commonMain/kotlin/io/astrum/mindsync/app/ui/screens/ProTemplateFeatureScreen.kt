@@ -54,7 +54,7 @@ fun ProTemplateFeature(
         val proFeaturesDescription = buildAnnotatedString {
             append(localization.proFeatureScreenDescription)
             withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
-                append("multiplatformkickstarter.com")
+                append("mindsync.com")
             }
         }
         Text(

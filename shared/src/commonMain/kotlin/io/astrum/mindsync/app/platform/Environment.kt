@@ -3,8 +3,8 @@ package io.astrum.mindsync.app.platform
 sealed class Environment(val name: String, val url: String)
 
 sealed class ServerEnvironment(name: String, endpoint: String) : Environment(name, endpoint) {
-    data object PRODUCTION : Environment("PRODUCTION", "http://multiplatformkickstarter.com")
-    data object PREPRODUCTION : Environment("PREPRODUCTION", "http://pre.multiplatformkickstarter.com")
+    data object PRODUCTION : Environment("PRODUCTION", "http://mindsync.com")
+    data object PREPRODUCTION : Environment("PREPRODUCTION", "http://pre.mindsync.com")
 
     // This IP represents the localhost of your computer through the emulator
     data object LOCALHOST : Environment("LOCALHOST", "http://10.0.2.2:8080")

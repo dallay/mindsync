@@ -13,7 +13,7 @@ import io.astrum.mindsync.app.localization.getCurrentLocalization
 import io.astrum.mindsync.app.platform.Resources
 import io.astrum.mindsync.app.ui.components.CarouselItem
 import io.astrum.mindsync.app.ui.components.OnboardingComponent
-import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
+import io.astrum.mindsync.app.ui.theme.ApplicationTheme
 
 class OnboardingScreen : Screen {
 
@@ -22,7 +22,7 @@ class OnboardingScreen : Screen {
         val localization = getCurrentLocalization()
         val navigator = LocalNavigator.currentOrThrow
 
-        MultiplatformKickstarterTheme {
+        ApplicationTheme {
             val onboardingPromoTitle1 = buildAnnotatedString {
                 withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
                     append(localization.onboardingPromoTitle1)
@@ -51,7 +51,7 @@ class OnboardingScreen : Screen {
             val onboardingPromoLine3 = buildAnnotatedString {
                 append(localization.onboardingPromoLine3)
                 withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
-                    append("multiplatformkickstarter.com")
+                    append("mindsync.com")
                 }
             }
 

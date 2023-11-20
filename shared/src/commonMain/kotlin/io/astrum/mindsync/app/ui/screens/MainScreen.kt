@@ -24,16 +24,16 @@ import io.astrum.mindsync.app.navigation.PetUploadTab
 import io.astrum.mindsync.app.navigation.ProfileTab
 import io.astrum.mindsync.app.platform.RootNavigatorRepository
 import io.astrum.mindsync.app.platform.RootSnackbarHostStateRepository
-import io.astrum.mindsync.app.ui.components.MultiplatformKickstarterNavigationBar
-import io.astrum.mindsync.app.ui.components.MultiplatformKickstarterNavigationBarItem
-import io.astrum.mindsync.app.ui.theme.MultiplatformKickstarterTheme
+import io.astrum.mindsync.app.ui.components.ApplicationNavigationBar
+import io.astrum.mindsync.app.ui.components.ApplicationNavigationBarItem
+import io.astrum.mindsync.app.ui.theme.ApplicationTheme
 import org.koin.core.parameter.ParametersHolder
 import org.koin.mp.KoinPlatform
 
 class MainScreen : Screen {
     @Composable
     override fun Content() {
-        MultiplatformKickstarterTheme {
+        ApplicationTheme {
             MainScreenView()
         }
     }
@@ -56,7 +56,7 @@ fun MainScreenView() {
             contentWindowInsets = WindowInsets(0, 0, 0, 0),
             snackbarHost = { SnackbarHost(rootSnackbarHostStateRepository.snackbarHostState) },
             bottomBar = {
-                MultiplatformKickstarterNavigationBar {
+                ApplicationNavigationBar {
                     TabNavigationItem(HomeTab, rootNavigatorRepository)
                     TabNavigationItem(FavoritesTab, rootNavigatorRepository)
                     TabNavigationItem(PetUploadTab, rootNavigatorRepository)
@@ -87,7 +87,7 @@ private fun RowScope.TabNavigationItem(tab: Tab, rootNavigator: RootNavigatorRep
     val tabNavigator = LocalTabNavigator.current
     val currentDestination = tabNavigator.current.key == tab.key
 
-    MultiplatformKickstarterNavigationBarItem(
+    ApplicationNavigationBarItem(
         selected = currentDestination,
         onClick = {
             if (tab is PetUploadTab) {
