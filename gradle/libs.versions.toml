@@ -53,7 +53,7 @@ multiplatform-settings-serialization = { module = "com.russhwolf:multiplatform-s
 multiplatform-settings-test = { module = "com.russhwolf:multiplatform-settings-test", version.ref = "multiplatform-settings" }
 skiko = { module = "org.jetbrains.skiko:skiko", version.ref = "skiko" }
 skiko-macos-arm64 = { module = "org.jetbrains.skiko:skiko-awt-runtime-macos-arm64", version.ref = "skiko" }
-ktor-client = "io.ktor:ktor-client-core:2.3.5"
+ktor-client = "io.ktor:ktor-client-core:2.3.6"
 kamel = "media.kamel:kamel-image:0.7.3"
 kmp-settings = "com.russhwolf:multiplatform-settings-no-arg:1.1.0"
 kermit = "co.touchlab:kermit:2.0.2"
