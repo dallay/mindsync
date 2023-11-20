@@ -125,7 +125,7 @@ kotlinx-html-jvm = "org.jetbrains.kotlinx:kotlinx-html-jvm:0.9.1"
 logback-classic = "ch.qos.logback:logback-classic:1.4.11"
 postgresql = "org.postgresql:postgresql:42.3.8"
 hikariCP = "com.zaxxer:HikariCP:5.0.1"
-swagger-codegen = "io.swagger.codegen.v3:swagger-codegen-generators:1.0.38"
+swagger-codegen = "io.swagger.codegen.v3:swagger-codegen-generators:1.0.44"
 
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 
