@@ -73,11 +73,13 @@ kotlin {
             }
         }
         val androidMain by getting {
+            dependsOn(commonMain)
             dependencies {
                 implementation(libs.ktor.client.android)
             }
         }
         val iosMain by getting {
+            dependsOn(commonMain)
             dependencies {
                 implementation(libs.ktor.client.darwin)
             }
@@ -111,4 +113,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+}
+dependencies {
+    implementation("androidx.core:core-ktx:+")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.0.0")
 }
