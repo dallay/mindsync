@@ -88,7 +88,7 @@ fun ContentSimpleRowCalendarItem(
     val modifier: Modifier = Modifier
         .width(40.dp)
         .height(48.dp)
-        .padding(2.dp)
+        .padding(1.dp)
         .clickable {
             onDateClickListener(date)
         }
@@ -105,7 +105,7 @@ fun ContentSimpleRowCalendarItem(
         Text(
             text = date.date.dayOfMonth.toString(),
             modifier = Modifier.align(Alignment.CenterHorizontally),
-            fontSize = 18.sp,
+            fontSize = 14.sp,
             fontWeight = if(date.isSelected) {
                 FontWeight.Bold
             } else {

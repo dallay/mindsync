@@ -93,13 +93,7 @@ fun DailyNote(calendarUiModel: SimpleRowCalendarUiModel) {
                 Text(text = "Page")
             }
         }
-        Text(
-            text = """
-        day: ${calendarUiModel.selectedDate.day}
-        isToday: ${calendarUiModel.selectedDate.isToday}
-        isSelected: ${calendarUiModel.selectedDate.isSelected}
-    """.trimIndent()
-        )
+        DailyNoteEditor(calendarUiModel)
     }
 }
 
