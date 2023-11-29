@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.core.view.WindowCompat
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import io.astrum.mindsync.app.MainApp
 import io.astrum.mindsync.app.common.model.theme.DarkThemeConfig
@@ -16,6 +17,8 @@ import io.astrum.mindsync.app.ui.theme.ApplicationTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        WindowCompat.setDecorFitsSystemWindows(window, false)
 
         val uiState: MainActivityUiState by mutableStateOf(MainActivityUiState.Loading)
 

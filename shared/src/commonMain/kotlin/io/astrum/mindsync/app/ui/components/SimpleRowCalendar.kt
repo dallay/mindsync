@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -23,6 +24,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ShapeDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -34,6 +36,7 @@ import io.astrum.mindsync.app.ui.screens.viewmodel.SimpleRowCalendarUiModel
 import kotlinx.datetime.LocalDate
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SimpleRowCalendar(
     data: SimpleRowCalendarUiModel,
@@ -42,7 +45,9 @@ fun SimpleRowCalendar(
     onNextClickListener: (LocalDate) -> Unit,
     onDateClickListener: (SimpleRowCalendarUiModel.Date) -> Unit,
 ) {
-    Row {
+    Row(modifier = Modifier.windowInsetsPadding(
+        TopAppBarDefaults.windowInsets
+    )) {
         IconButton(onClick = { onPrevClickListener(data.startDate.date) }) {
             Icon(
                 imageVector = Icons.Filled.ChevronLeft,

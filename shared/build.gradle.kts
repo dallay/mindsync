@@ -7,7 +7,7 @@ plugins {
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    targetHierarchy.default()
+    kotlin.applyDefaultHierarchyTemplate()
 
     androidTarget {
         compilations.all {
@@ -70,12 +70,15 @@ kotlin {
 
                 // Logging
                 implementation(libs.kermit)
+
+                implementation(libs.rich.editor)
             }
         }
         val androidMain by getting {
             dependsOn(commonMain)
             dependencies {
                 implementation(libs.ktor.client.android)
+                implementation(libs.androidx.core.ktx)
             }
         }
         val iosMain by getting {

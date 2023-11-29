@@ -46,7 +46,9 @@ android {
 dependencies {
     implementation(project(":shared"))
 
-    implementation(platform(libs.compose.bom))
+    val composeBom = platform(libs.androidx.compose.bom)
+    implementation(composeBom)
+    androidTestImplementation(composeBom)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.core.splashscreen)
