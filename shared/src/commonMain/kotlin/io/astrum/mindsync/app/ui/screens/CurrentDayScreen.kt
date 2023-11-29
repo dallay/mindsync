@@ -2,8 +2,6 @@ package io.astrum.mindsync.app.ui.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.horizontalScroll
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
@@ -13,8 +11,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.ime
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Divider
@@ -31,6 +30,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.SoftwareKeyboardController
@@ -53,6 +56,60 @@ import kotlinx.datetime.todayIn
 class CurrentDayScreen(
     private val date: LocalDate = Clock.System.todayIn(TimeZone.currentSystemDefault())
 ) : Screen {
+    private val toolbarButtons = listOf(
+        ToolbarButton(id = "ai_block",
+            icon = ApplicationIcons.Sparkle,
+            contentDescription = "Insert Block",
+            onClick = {}),
+        ToolbarButton(id = "insert_block",
+            icon = ApplicationIcons.Add,
+            contentDescription = "Insert Block",
+            onClick = {}),
+        ToolbarButton(id = "transform_block",
+            icon = ApplicationIcons.Repeat,
+            contentDescription = "Transform a Block to another",
+            onClick = {}),
+        ToolbarButton(id = "image_block",
+            icon = ApplicationIcons.PhotoLibrary,
+            contentDescription = "Insert Image",
+            onClick = {}),
+        ToolbarButton(id = "format_text",
+            icon = ApplicationIcons.TextFormat,
+            contentDescription = "Format Text",
+            onClick = {}),
+        ToolbarButton(id = "undo",
+            icon = ApplicationIcons.Undo,
+            contentDescription = "Undo",
+            onClick = {}),
+        ToolbarButton(id = "mention_someone",
+            icon = ApplicationIcons.AlternateEmail,
+            contentDescription = "Mention someone",
+            onClick = {}),
+        ToolbarButton(id = "delete_block",
+            icon = ApplicationIcons.Delete,
+            contentDescription = "Delete Block",
+            onClick = {}),
+        ToolbarButton(id = "increase_indentation",
+            icon = ApplicationIcons.FormatIndentIncrease,
+            contentDescription = "Increase Indentation",
+            onClick = {}),
+        ToolbarButton(id = "decrease_indentation",
+            icon = ApplicationIcons.FormatIndentDecrease,
+            contentDescription = "Decrease Indentation",
+            onClick = {}),
+        ToolbarButton(id = "align_bottom",
+            icon = ApplicationIcons.VerticalAlignBottom,
+            contentDescription = "Align Bottom",
+            onClick = {}),
+        ToolbarButton(id = "align_top",
+            icon = ApplicationIcons.VerticalAlignTop,
+            contentDescription = "Align Top",
+            onClick = {}),
+        ToolbarButton(id = "more_options",
+            icon = ApplicationIcons.MoreHoriz,
+            contentDescription = "More Options",
+            onClick = {}),
+    )
 
     @Composable
     override fun Content() {
@@ -72,22 +129,19 @@ class CurrentDayScreen(
         fun onDateClickListener(date: SimpleRowCalendarUiModel.Date) {
             // refresh the CalendarUiModel with new data
             // by changing only the `selectedDate` with the date selected by User
-            calendarUiModel = calendarUiModel.copy(
-                selectedDate = date,
+            calendarUiModel = calendarUiModel.copy(selectedDate = date,
                 visibleDates = calendarUiModel.visibleDates.map {
                     it.copy(
                         isSelected = it.date == date.date
                     )
-                }
-            )
+                })
         }
         onDateClickListener(calendarUiModel.selectedDate)
         fun onPreviousClickListener(
             startDate: LocalDate
         ) {
             calendarUiModel = dataSource.getData(
-                startDate.minus(1, DateTimeUnit.DAY),
-                calendarUiModel.selectedDate.date
+                startDate.minus(1, DateTimeUnit.DAY), calendarUiModel.selectedDate.date
             )
         }
 
@@ -95,35 +149,27 @@ class CurrentDayScreen(
             startDate: LocalDate
         ) {
             calendarUiModel = dataSource.getData(
-                startDate.plus(2, kotlinx.datetime.DateTimeUnit.DAY),
+                startDate.plus(2, DateTimeUnit.DAY),
                 calendarUiModel.selectedDate.date
             )
         }
 
         ApplicationTheme {
-            Scaffold(
-                topBar = {
-                    SimpleRowCalendar(calendarUiModel,
-                        onPrevClickListener = { startDate ->
-                            onPreviousClickListener(startDate)
-                        },
-                        onNextClickListener = { startDate ->
-                            onNextClickListener(startDate)
-                        },
-                        onDateClickListener = { date ->
-                            onDateClickListener(date)
-                        }
-                    )
-                },
-                bottomBar = {
-                    DailyNoteEditorToolbar()
-                }
-            ) {
+            Scaffold(topBar = {
+                SimpleRowCalendar(calendarUiModel, onPrevClickListener = { startDate ->
+                    onPreviousClickListener(startDate)
+                }, onNextClickListener = { startDate ->
+                    onNextClickListener(startDate)
+                }, onDateClickListener = { date ->
+                    onDateClickListener(date)
+                })
+            }, bottomBar = {
+                DailyNoteEditorToolbar()
+            }) {
                 val scrollState = rememberScrollState()
 
                 Column(
-                    modifier = Modifier
-                        .padding(it).padding(bottom = 46.dp)
+                    modifier = Modifier.padding(it).padding(bottom = 46.dp)
                         .background(MaterialTheme.colorScheme.background)
                         .verticalScroll(scrollState)
                 ) {
@@ -148,149 +194,48 @@ class CurrentDayScreen(
     @OptIn(ExperimentalComposeUiApi::class, ExperimentalFoundationApi::class)
     @Composable
     private fun DailyNoteEditorToolbar(
-        keyboardController: SoftwareKeyboardController?
-        = LocalSoftwareKeyboardController.current
+        keyboardController: SoftwareKeyboardController? = LocalSoftwareKeyboardController.current
     ) {
         Column(
-            modifier = Modifier.windowInsetsPadding(WindowInsets.ime)
-                .imePadding()
-                .fillMaxWidth()
+            modifier = Modifier.windowInsetsPadding(WindowInsets.ime).imePadding().fillMaxWidth()
         ) {
+            val dividerColor: Color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.2f)
             Divider(
-                color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier
-                    .height(0.8.dp)
-                    .fillMaxHeight()
-                    .fillMaxWidth()
+                color = dividerColor,
+                modifier = Modifier.height(0.8.dp).fillMaxHeight().fillMaxWidth()
             )
-            val scrollState = rememberScrollState()
-            Row(
-                modifier = Modifier
-                    .background(MaterialTheme.colorScheme.surface)
-                    .horizontalScroll(scrollState)
-                    .fillMaxWidth()
-                    .height(38.dp)
-                    .padding(1.dp),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Row {
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            imageVector = ApplicationIcons.Add,
-                            contentDescription = "Insert Block",
-                        )
-                    }
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            imageVector = ApplicationIcons.Repeat,
-                            contentDescription = "Transform a Block to another",
-                        )
-                    }
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            imageVector = ApplicationIcons.PhotoLibrary,
-                            contentDescription = "Insert Image",
-                        )
-                    }
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            imageVector = ApplicationIcons.TextFormat,
-                            contentDescription = "Format Text",
-                        )
-                    }
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            imageVector = ApplicationIcons.Undo,
-                            contentDescription = "Undo",
-                        )
-                    }
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            imageVector = ApplicationIcons.AlternateEmail,
-                            contentDescription = "Mention someone",
-                        )
-                    }
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            imageVector = ApplicationIcons.Delete,
-                            contentDescription = "Delete Block",
-                        )
-                    }
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            imageVector = ApplicationIcons.FormatIndentIncrease,
-                            contentDescription = "Increase Indentation",
-                        )
-                    }
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            imageVector = ApplicationIcons.FormatIndentDecrease,
-                            contentDescription = "Decrease Indentation",
-                        )
-                    }
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            imageVector = ApplicationIcons.FormatIndentDecrease,
-                            contentDescription = "Decrease Indentation",
-                        )
-                    }
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            imageVector = ApplicationIcons.VerticalAlignBottom,
-                            contentDescription = "Align Bottom",
-                        )
-                    }
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            imageVector = ApplicationIcons.VerticalAlignTop,
-                            contentDescription = "Align Top",
-                        )
-                    }
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            imageVector = ApplicationIcons.MoreHoriz,
-                            contentDescription = "More Options",
-                        )
+
+            Row(modifier = Modifier.fillMaxWidth()) {
+                LazyRow(modifier = Modifier.weight(1F)) {
+                    items(toolbarButtons) { button ->
+                        IconButton(
+                            onClick = button.onClick
+                        ) {
+                            Icon(
+                                imageVector = button.icon,
+                                contentDescription = button.contentDescription,
+                            )
+                        }
                     }
                 }
-                Row {
-                    Divider(
-                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.2f),
-                        modifier = Modifier
-                            .fillMaxHeight()
-                            .width(0.5.dp).padding(vertical = 5.dp)
-                    )
-                    IconButton(
-                        onClick = {
-                            keyboardController?.hide()
-                        }
-                    ) {
+
+                Row(
+                    modifier = Modifier.drawBehind {
+                        val strokeWidth = 1 * density
+                        val topSpace = 8.dp.toPx()
+                        val bottomSpace = 8.dp.toPx()
+                        // Draw line function for left border with space at top and bottom
+                        drawLine(
+                            dividerColor,
+                            start = Offset(0f, topSpace),
+                            end = Offset(0f, size.height - bottomSpace),
+                            strokeWidth
+                        )
+                    }
+                ) {
+                    IconButton(onClick = {
+                        keyboardController?.hide()
+                    }) {
                         Icon(
                             imageVector = ApplicationIcons.KeyboardHide,
                             contentDescription = "Hide Keyboard",
@@ -301,3 +246,7 @@ class CurrentDayScreen(
         }
     }
 }
+
+data class ToolbarButton(
+    val id: String, val icon: ImageVector, val contentDescription: String, val onClick: () -> Unit
+)
