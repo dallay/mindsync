@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MindSync"
+        android:windowSoftInputMode="adjustResize"
         tools:targetApi="31"
         android:usesCleartextTraffic="true"> <!-- This line must be removed when going to production environment -->
 

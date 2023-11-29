@@ -7,7 +7,7 @@ plugins {
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    targetHierarchy.default()
+    kotlin.applyDefaultHierarchyTemplate()
 
     androidTarget {
         compilations.all {
@@ -70,14 +70,19 @@ kotlin {
 
                 // Logging
                 implementation(libs.kermit)
+
+                implementation(libs.rich.editor)
             }
         }
         val androidMain by getting {
+            dependsOn(commonMain)
             dependencies {
                 implementation(libs.ktor.client.android)
+                implementation(libs.androidx.core.ktx)
             }
         }
         val iosMain by getting {
+            dependsOn(commonMain)
             dependencies {
                 implementation(libs.ktor.client.darwin)
             }
@@ -111,4 +116,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+}
+dependencies {
+    implementation("androidx.core:core-ktx:+")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.0.0")
 }

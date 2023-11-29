@@ -17,7 +17,7 @@ import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabNavigator
 import cafe.adriel.voyager.transitions.SlideTransition
 import io.astrum.mindsync.app.feature.petupload.PetUploadScreen
-import io.astrum.mindsync.app.navigation.FavoritesTab
+import io.astrum.mindsync.app.navigation.CurrentDayTab
 import io.astrum.mindsync.app.navigation.HomeTab
 import io.astrum.mindsync.app.navigation.InboxTab
 import io.astrum.mindsync.app.navigation.PetUploadTab
@@ -41,24 +41,24 @@ class MainScreen : Screen {
 
 @Composable
 fun MainScreenView() {
-    val snackbarHostState = remember { SnackbarHostState() }
+    val snackBarHostState = remember { SnackbarHostState() }
     val rootNavigator = LocalNavigator.currentOrThrow
     TabNavigator(
-        HomeTab,
+        CurrentDayTab,
         disposeNestedNavigators = false
     ) { _ ->
         val rootNavigatorRepository = setupRootNavigator(rootNavigator, LocalTabNavigator.current)
-        val rootSnackbarHostStateRepository = setupRootSnackbarHostState(snackbarHostState)
+        val rootSnackBarHostStateRepository = setupRootSnackBarHostState(snackBarHostState)
 
         Scaffold(
             containerColor = MaterialTheme.colorScheme.background,
             contentColor = MaterialTheme.colorScheme.onBackground,
             contentWindowInsets = WindowInsets(0, 0, 0, 0),
-            snackbarHost = { SnackbarHost(rootSnackbarHostStateRepository.snackbarHostState) },
+            snackbarHost = { SnackbarHost(rootSnackBarHostStateRepository.snackbarHostState) },
             bottomBar = {
                 ApplicationNavigationBar {
                     TabNavigationItem(HomeTab, rootNavigatorRepository)
-                    TabNavigationItem(FavoritesTab, rootNavigatorRepository)
+                    TabNavigationItem(CurrentDayTab, rootNavigatorRepository)
                     TabNavigationItem(PetUploadTab, rootNavigatorRepository)
                     TabNavigationItem(InboxTab, rootNavigatorRepository)
                     TabNavigationItem(ProfileTab, rootNavigatorRepository)
@@ -77,9 +77,9 @@ fun setupRootNavigator(rootNavigator: Navigator, tabNavigator: TabNavigator): Ro
     return koin.get(null, parameters = { ParametersHolder(listOf(rootNavigator, tabNavigator).toMutableList(), false) })
 }
 
-fun setupRootSnackbarHostState(snackbarHostState: SnackbarHostState): RootSnackbarHostStateRepository {
+fun setupRootSnackBarHostState(snackBarHostState: SnackbarHostState): RootSnackbarHostStateRepository {
     val koin = KoinPlatform.getKoin()
-    return koin.get(null, parameters = { ParametersHolder(listOf(snackbarHostState).toMutableList(), false) })
+    return koin.get(null, parameters = { ParametersHolder(listOf(snackBarHostState).toMutableList(), false) })
 }
 
 @Composable

@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
-
 package io.astrum.mindsync.app.ui.screens
 
 import androidx.compose.foundation.background
@@ -57,6 +55,7 @@ class PetDetailScreen(private val petId: Int) : Screen {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PetDetailView(petModel: PetModel, onClose: () -> Unit) {
     val scrollState = rememberScrollState()
