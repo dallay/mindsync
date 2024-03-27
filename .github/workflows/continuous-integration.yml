@@ -45,7 +45,7 @@ jobs:
                 with:
                     fetch-depth: 0
             -   name: Validate Gradle wrapper
-                uses: gradle/wrapper-validation-action@v1.1.0
+                uses: gradle/wrapper-validation-action@v2.1.2
     compile:
         name: 🛠️ Assembling
         needs: start-steps
@@ -61,7 +61,7 @@ jobs:
             -   name: 🛠️Assemble Application
                 run: ./gradlew assembleDebug --no-daemon --scan --stacktrace
             -   name: 🟢⬆️ Upload compose reports artifact
-                uses: actions/upload-artifact@v3.1.3
+                uses: actions/upload-artifact@v4.3.1
                 if: always()
                 with:
                     name: compose-reports
@@ -70,13 +70,13 @@ jobs:
                         **/build/compose-reports
                     retention-days: 7
             -   name: 🟢⬆️Upload Android APK
-                uses: rnkdsh/action-upload-diawi@v1.5.3
+                uses: rnkdsh/action-upload-diawi@v1.5.5
                 id: diawi_android
                 with:
                     token: ${{ secrets.DIAWI_TOKEN }}
                     file: ./apps/androidApp/build/outputs/apk/debug/androidApp-debug.apk
             -   name: 🟢 Post comment with Diawi link
-                uses: peter-evans/create-or-update-comment@v3.1.0
+                uses: peter-evans/create-or-update-comment@v4.0.0
                 with:
                     issue-number: ${{ github.event.pull_request.number }}
                     body: |
@@ -118,14 +118,14 @@ jobs:
                     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             -   name: 🟢 Upload tests reports artifact (success ✅)
-                uses: actions/upload-artifact@v3.1.3
+                uses: actions/upload-artifact@v4.3.1
                 if: success()
                 with:
                     name: tests-reports
                     path: build/reports/allTests
                     retention-days: 7
             -   name: 🔴 Upload tests reports artifact (failure ❌)
-                uses: actions/upload-artifact@v3.1.3
+                uses: actions/upload-artifact@v4.3.1
                 if: failure()
                 with:
                     name: tests-reports
@@ -134,20 +134,20 @@ jobs:
                         **/build/reports/tests/testDebugUnitTest
                     retention-days: 7
             -   name: 🟢 Upload coverage reports artifact
-                uses: actions/upload-artifact@v3.1.3
+                uses: actions/upload-artifact@v4.3.1
                 with:
                     name: coverage-reports
                     path: '**/build/reports/kover/report.xml'
                     retention-days: 1
             -   name: 🟢 ➡️ 🧪 Upload report to Codecov
-                uses: codecov/codecov-action@v3.1.4
+                uses: codecov/codecov-action@v4.1.1
                 with:
                     token: ${{ secrets.CODECOV_TOKEN }}
                     files: build/reports/kover/report.xml
                     flags: unittests
                     verbose: true
             -   name: 🟡 Post comment with build scan URL as PR comment
-                uses: peter-evans/create-or-update-comment@v3.1.0
+                uses: peter-evans/create-or-update-comment@v4.0.0
                 if: github.event_name == 'pull_request' && failure()
                 with:
                     issue-number: ${{ format('PR-{0}', github.event.pull_request.number) }}
@@ -160,7 +160,7 @@ jobs:
                         confused
                         eyes
             -   name: 📑📚 Upload documentation results
-                uses: actions/upload-artifact@v3
+                uses: actions/upload-artifact@v4
                 with:
                     name: documentation
                     path: build/documentation
@@ -181,14 +181,14 @@ jobs:
             -   name: 🛡️Check OWASP
                 run: ./gradlew dependencyCheckAnalyze --no-daemon --stacktrace
             -   name: ️🛡️⬆️ Upload owasp-report results
-                uses: actions/upload-artifact@v3
+                uses: actions/upload-artifact@v4
                 with:
                     name: owasp-reports
                     path: build/reports/owasp
             -   name: Run detekt
                 run: ./gradlew detektAll lintDebug --no-daemon --stacktrace
             -   name: Upload static reports artifact
-                uses: actions/upload-artifact@v3.1.3
+                uses: actions/upload-artifact@v4.3.1
                 with:
                     name: static-report
                     path: |
@@ -196,7 +196,7 @@ jobs:
                         **/build/reports/lint-results-debug.xml
                     retention-days: 1
             -   name: Analyze detekt report
-                uses: github/codeql-action/upload-sarif@v2.22.7
+                uses: github/codeql-action/upload-sarif@v3.24.9
                 with:
                     sarif_file: build/reports/detekt/detekt.sarif
                     checkout_path: ${{ github.workspace }}
@@ -218,7 +218,7 @@ jobs:
             -   name: 🏗️ 📦 Build package
                 run: ./gradlew assemble --scan -x test -x integrationTest
             -   name: 🟢 Setup Node.js
-                uses: actions/setup-node@v3
+                uses: actions/setup-node@v4
                 with:
                     node-version: 'lts/*'
             -   name: 🧩 Add plugin for conventional commits
@@ -279,12 +279,12 @@ jobs:
             -   name: ⚙️ Common Steps for all jobs
                 uses: ./.github/actions/common-steps
             -   name: ⬇️ 📜 Download documentation reports
-                uses: actions/download-artifact@v3
+                uses: actions/download-artifact@v4
                 with:
                     name: documentation
                     path: build/documentation
             -   name: ⬇️ 🛡️ Download owasp reports
-                uses: actions/download-artifact@v3
+                uses: actions/download-artifact@v4
                 with:
                     name: owasp-reports
                     path: build/reports/owasp
@@ -293,7 +293,7 @@ jobs:
                 env:
                     revnumber: ${{ needs.release.outputs.revnumber }}
             -   name: 🟢 📚 Publish documentation
-                uses: JamesIves/github-pages-deploy-action@v4.4.3
+                uses: JamesIves/github-pages-deploy-action@v4.5.0
                 with:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                     BRANCH: gh-pages
