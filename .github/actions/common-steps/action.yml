@@ -6,11 +6,11 @@ runs:
   using: composite
   steps:
     - name: ⚙️ Setup Java ☕
-      uses: actions/setup-java@v3.13.0
+      uses: actions/setup-java@v4.4.0
       with:
         distribution: temurin
         java-version: 17
     - name: ⚙️ Setup Gradle 🐘
-      uses: gradle/gradle-build-action@v2.9.0
+      uses: gradle/gradle-build-action@v3.5.0
       with:
         dependency-graph: generate-and-submit
