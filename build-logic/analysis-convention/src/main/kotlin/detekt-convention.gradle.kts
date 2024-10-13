@@ -7,7 +7,7 @@ plugins {
 }
 
 detekt {
-    toolVersion = "1.23.3"
+    toolVersion = "1.23.7"
     parallel = true
     ignoreFailures = false
     autoCorrect = true
